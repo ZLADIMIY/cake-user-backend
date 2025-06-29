@@ -1,0 +1,8 @@
+# Node 模块文件夹
+node_modules/
+
+# 环境变量文件
+.env
+
+# 日志文件
+*.log 
