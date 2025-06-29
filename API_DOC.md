@@ -198,8 +198,8 @@ CREATE TABLE users (
 
 ##  Maintainers
 
-* Backend Lead: **You**
-* Frontend Partner: **Your teammate**
+* Backend Lead: **Ye Zhou**
+* Frontend Partner: **Yiwei Wu**
 
 ---
 
