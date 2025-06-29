@@ -20,7 +20,7 @@ A Node.js + Express backend module for the **Farmers Marketplace** project. This
 ##  Installation
 
 ```bash
-git https://github.com/ZLADIMIY/cake-user-backend.git
+git clone https://github.com/ZLADIMIY/cake-user-backend.git
 cd farmers-marketplace-backend
 npm install
 ```
