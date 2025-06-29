@@ -1,0 +1,87 @@
+Base URL:
+http://localhost:5000/api/auth
+所有接口均基于此前缀
+------------------------------------------------------------
+用户认证接口说明:
+注册用户		POST	/register	无需认证
+登录获取 token	POST	/login	无需认证
+获取用户信息	GET	/profile	需要 token
+更新用户资料	PUT	/profile	需要 token
+------------------------------------------------------------
+1. 用户注册 - Register
+方法：POST
+
+地址：/register
+
+请求体（JSON）：
+{
+  "username": "alice",
+  "email": "alice@example.com",
+  "password": "123456"
+}
+
+成功响应：
+{
+  "message": "User registered successfully"
+}
+------------------------------------------------------------
+2. 用户登录 - Login
+方法：POST
+
+地址：/login
+
+请求体（JSON）：
+{
+  "username": "alice",
+  "password": "123456"
+}
+
+ 成功响应：
+{
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6..."
+}
+------------------------------------------------------------
+3. 获取用户信息 - Get Profile
+方法：GET
+
+地址：/profile
+
+需要授权头（JWT）
+请求头：
+Authorization: Bearer <your_token>
+
+成功响应：
+{
+  "id": 1,
+  "username": "alice",
+  "email": "alice@example.com",
+  "phone": "12345678",   // 可为空
+  "address": "UNSW Campus" // 可为空
+}
+------------------------------------------------------------
+4. 更新用户信息 - Update Profile
+方法：PUT
+
+地址：/profile
+
+需要授权头（JWT）
+请求头：
+Authorization: Bearer <your_token>
+Content-Type: application/json
+
+请求体（JSON）：
+{
+  "phone": "12345678",
+  "address": "UNSW Kensington Campus"
+}
+
+成功响应：
+{
+  "message": "Profile updated successfully"
+}
+------------------------------------------------------------
+ JWT 身份验证说明
+登录成功后获取的 token 是 JWT（JSON Web Token），用于验证身份
+
+前端需将此 token 存储（如 localStorage）并附加至每个受保护接口请求的 Authorization 请求头
