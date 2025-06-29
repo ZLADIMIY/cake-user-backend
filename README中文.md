@@ -37,7 +37,7 @@
 1. 克隆项目：
 
 ```bash
-git clone https://github.com/your-team/farmers-backend.git
+git clone https://github.com/ZLADIMIY/cake-user-backend.git
 cd farmers-backend
 ```
 2. 安装依赖：
